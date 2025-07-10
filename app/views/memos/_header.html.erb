@@ -1,0 +1,20 @@
+<header>
+  <%= link_to memos_path do %><img class="logo" src="/images/logo4.png" alt="logo"><%end%>
+  <div>
+    <% if local_assigns[:toNew] %>
+      <%= link_to "新規メモ",new_memo_path %>
+    <% end %>
+    <% if local_assigns[:toShow] %>
+      <%= link_to "詳細ページへ", @memo %>
+    <% end %>
+    <% if local_assigns[:toEdit] %>
+      <%= link_to "編集する", edit_memo_path(@memo) %>
+    <% end %>
+    <% if local_assigns[:toDelete] %>
+      <%= button_to "削除する", @memo, method: :delete ,data: {  "turbo-confirm": "削除してもよろしいですか？" }%>
+    <% end %>
+    <% if local_assigns[:toIndex] %>
+      <%= link_to "一覧に戻る",memos_path %>
+    <% end %>
+  </div>
+</header>

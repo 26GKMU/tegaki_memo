@@ -1,0 +1,12 @@
+
+<% content_for :title, "Memos" %>
+
+<%= render "memos/header", {toNew: true}%>
+<div id="memo" class="inIndex">
+  <p style="color: green"><%= notice %></p>
+  <ul>
+    <% @memos.each do |memo| %>
+      <%= render memo %>
+    <% end %>
+  </ul>
+</div>

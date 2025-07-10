@@ -1,0 +1,8 @@
+
+<%= render "memos/header" , {toEdit: true, toDelete: true, toIndex: true}%>
+<div id="memo">
+  <p style="color: green"><%= notice %></p>
+  <ul>
+    <%= render @memo %>
+  </ul>
+</div>

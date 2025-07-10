@@ -1,0 +1,43 @@
+<%= form_with model: memo, id: "memo_form" do |f| %>
+  <% if memo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(memo.errors.count, "error") %> prohibited this memo from being saved:</h2>
+      <ul>
+        <% memo.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div id="form_container">
+    <div class="drawtools">
+      <div>
+        <label for="line_width">太さ</label>
+        <input type="range" id="line_width" min="1" max="15" value="8">
+      </div>
+      <div>
+        <label for="line_alpha">透明度</label>
+        <input type="range" id="line_alpha" min="1" max="10" value="10">
+      </div>
+      <div>
+        <label for="color_checkbox">カラー</label>
+        <div class="color_checkbox"></div>
+      </div>
+      <input type="button" id="clear_canvas" value="全消去"></button>
+    </div>
+
+    <div class="form_box">
+      <div class="form_title">
+        <div><%= f.label :title %>：<%= f.text_field :title %></div>
+        <%= f.submit "メモを保存する" %>
+      </div>
+      <div class=form_image_data>
+        <canvas id="draw_canvas" width="640" height="480":></canvas>
+        <%= f.hidden_field :image_data, class: "memo_img" %>
+      </div>
+      <%= f.hidden_field :user_id %>
+    </div>
+  </div>
+<% end %>
