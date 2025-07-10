@@ -1,11 +1,23 @@
-
+<% if local_assigns[:linked] %>
   <li> 
     <%= link_to(memo) do %>
       <div class="memo_label">
         <div class="memo_title"><%= memo.title%></div>
         <div class="memo_created"><%= memo.created_at.in_time_zone("Tokyo").strftime("%Y-%m-%d %H:%M:%S") %></div>
       </div>
-      <img class="memo_pict" src='<%= memo.image_data %>'>
+      <div>
+        <img class="memo_pict" src='<%= memo.image_data %>'>
+      </div>
     <%end%>
   </li>
-
+<%else%>
+  <li> 
+    <div class="memo_label">
+      <div class="memo_title"><%= memo.title%></div>
+      <div class="memo_created"><%= memo.created_at.in_time_zone("Tokyo").strftime("%Y-%m-%d %H:%M:%S") %></div>
+    </div>
+    <div>
+      <img class="memo_pict" src='<%= memo.image_data %>'>
+    </div>
+  </li>
+<%end%>

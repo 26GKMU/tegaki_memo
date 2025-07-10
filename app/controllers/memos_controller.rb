@@ -25,7 +25,7 @@ class MemosController < ApplicationController
     @memo.user_id = 1
     respond_to do |format|
       if @memo.save
-        format.html { redirect_to @memo, notice: "Memo was successfully created." }
+        format.html { redirect_to @memo, notice: "メモを作成しました." }
         format.json { render :show, status: :created, location: @memo }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class MemosController < ApplicationController
   def update
     respond_to do |format|
       if @memo.update(memo_params)
-        format.html { redirect_to @memo, notice: "Memo was successfully updated." }
+        format.html { redirect_to @memo, notice: "メモを更新しました." }
         format.json { render :show, status: :ok, location: @memo }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class MemosController < ApplicationController
     @memo.destroy!
 
     respond_to do |format|
-      format.html { redirect_to memos_path, status: :see_other, notice: "Memo was successfully destroyed." }
+      format.html { redirect_to memos_path, status: :see_other, notice: "メモを削除しました" }
       format.json { head :no_content }
     end
   end

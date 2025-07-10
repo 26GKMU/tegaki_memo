@@ -1,8 +1,8 @@
 
 <%= render "memos/header" , {toEdit: true, toDelete: true, toIndex: true}%>
 <div id="memo">
-  <p style="color: green"><%= notice %></p>
+  <p class="flash_message" style="color: green"><%= notice %></p>
   <ul>
-    <%= render @memo %>
+    <%= render @memo ,{linked: false}%>
   </ul>
 </div>

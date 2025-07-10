@@ -51,6 +51,7 @@ body{
 #memo,#editor{
   width: 100%;
   display:flex;
+  flex-direction: column;
   margin-top:75px;
 }
 #editor{
@@ -73,12 +74,12 @@ li{
   width: 540px;
 }
 
-li > a > div{
+li .memo_label{
   padding:10px 20px 0;
   color: black;
   font-weight: bolder;
 }
-li > a > img{
+li img{
   background-color: white;
   margin:10px 30px 20px;
   border-radius: 5px;
@@ -189,5 +190,6 @@ canvas .memo_pict{
   right: 6px;
 }
 
-
-
+.flash_message{
+  margin:0 auto;
+}
