@@ -1,6 +1,4 @@
 document.addEventListener("turbo:load", () => {
-  console.log("initialized")
-
   /* なんとなく入れる時計 */
   if (document.getElementById("clock")){
     setInterval(() => {
@@ -43,7 +41,6 @@ document.addEventListener("turbo:load", () => {
       const prev ={ x:0, y:0 }; 
       const setColor = ()=>{ 
         ctx.strokeStyle = `rgb(${drawColor.r} ${drawColor.g} ${drawColor.b} / ${drawColor.a})`;
-        console.log(drawColor,ctx.strokeStyle)
       }
       canvas.addEventListener('mousemove',(e)=>{
           draw(e.offsetX, e.offsetY);
