@@ -10,6 +10,5 @@
 
 User.find_or_create_by!(id: 1) do |user|
   user.name = "利用者さん"
-  user.password = "password123"
-  user.password_confirmation = "password123"
+  user.password_digest = ""
 end
